@@ -4,6 +4,7 @@ public class DiscreteDistribution {
         int[] a = new int[args.length - 1];
         for (int i = 1; i <= args.length - 1; i++) {
             a[i - 1] = Integer.parseInt(args[i]);
+
         }
 
     }
