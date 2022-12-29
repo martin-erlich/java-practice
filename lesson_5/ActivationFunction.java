@@ -15,6 +15,11 @@ public class ActivationFunction {
 
     public static double tanh(double x) {
 
+        if (x >= 20) {
+            return 1.0;
+        } else if (x <= -20) {
+            return -1.0;
+        }
         double num = Math.exp(x) - Math.exp(x * -1);
         double den = Math.exp(x) + Math.exp(x * -1);
         return num / den;

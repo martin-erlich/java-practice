@@ -2,20 +2,20 @@ public class Divisors {
 
     // Returns the greatest common divisor of a and b.
     public static int gcd(int a, int b) {
-        if (a == 0 && b == 0) {
-            return 0;
-        }
-        if (b == 0) {
-            return b;
-        }
         int x = Math.abs(a);
         int y = Math.abs(b);
-
+        if (a == 0 && b == 0) {
+            return 0;
+        } else if (x == 0) {
+            return y;
+        } else if (y == 0) {
+            return x;
+        }
         int rest = x % y;
         if (rest == 0) {
-            return b;
+            return y;
         } else {
-            return gcd(b, rest);
+            return gcd(y, rest);
         }
     }
 
@@ -53,7 +53,8 @@ public class Divisors {
         int b = Integer.parseInt(args[1]);
         System.out.println("gcd(" + a + ", " + b + ") = " + gcd(a, b));
         System.out.println("lcm(" + a + ", " + b + ") = " + lcm(a, b));
-        System.out.println("areRelativelyPrime(" + a + ", " + b + ") = " + areRelativelyPrime(a, b));
+        System.out.println("areRelativelyPrime(" + a + ", " + b + ") = " +
+                areRelativelyPrime(a, b));
         System.out.println("totient(" + a + ") = " + totient(a));
         System.out.println("totient(" + b + ") = " + totient(b));
 
